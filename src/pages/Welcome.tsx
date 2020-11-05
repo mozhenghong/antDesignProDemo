@@ -1,7 +1,8 @@
 import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography } from 'antd';
+import { Card, Alert, Typography, Button } from 'antd';
 import styles from './Welcome.less';
+import {history} from 'umi';
 
 const CodePreview: React.FC<{}> = ({ children }) => (
   <pre className={styles.pre}>
@@ -10,7 +11,9 @@ const CodePreview: React.FC<{}> = ({ children }) => (
     </code>
   </pre>
 );
-
+const handleClick = () => {
+  history.push('/dashboard/anyParams?id=1&&count=2');
+}
 export default (): React.ReactNode => (
   <PageContainer>
     <Card>
@@ -31,7 +34,7 @@ export default (): React.ReactNode => (
           rel="noopener noreferrer"
           target="__blank"
         >
-          欢迎使用
+          欢迎使用 
         </a>
       </Typography.Text>
       <CodePreview>yarn add @ant-design/pro-table</CodePreview>
@@ -52,5 +55,6 @@ export default (): React.ReactNode => (
       </Typography.Text>
       <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
     </Card>
+    <Button onClick={handleClick}>带参数跳转方式一</Button>
   </PageContainer>
 );

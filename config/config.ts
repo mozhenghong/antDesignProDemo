@@ -79,6 +79,18 @@ export default defineConfig({
               component: './ListTableList',
             },
             {
+              path: '/dashboard/:page',
+              hideInMenu:true,
+              name: 'welcome',
+              component: './ListTableList',
+            },
+            {
+              path: '/newPage',
+              name: '新页面',
+              icon: 'MedicineBoxOutlined',
+              component: './NewPage',
+            },
+            {
               component: './404',
             },
           ],
