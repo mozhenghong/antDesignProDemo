@@ -11,6 +11,7 @@ export default defineConfig({
   dva: {
     hmr: true,
   },
+  favicon:'favicon.ico',
   locale: {
     // default zh-CN
     default: 'zh-CN',
